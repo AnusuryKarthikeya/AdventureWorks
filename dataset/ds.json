@@ -12,6 +12,7 @@
 				"type": "HttpServerLocation",
 				"relativeUrl": "AnusuryKarthikeya/AdventureWorks/refs/heads/main/Data/AdventureWorks_Products.csv"
 			},
+			"sheetIndex": 1,
 			"firstRowAsHeader": true
 		},
 		"schema": []
