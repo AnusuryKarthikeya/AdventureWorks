@@ -1,0 +1,19 @@
+{
+	"name": "ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "httplinkedservice",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "AnusuryKarthikeya/AdventureWorks/refs/heads/main/Data/AdventureWorks_Products.csv"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
