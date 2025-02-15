@@ -1,0 +1,9 @@
+{
+	"name": "adworksdatafac",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ca1f2df3-dd3e-4dd9-8e03-5239421a8a9a",
+		"tenantId": "feb60275-9c96-4815-a85e-405b2741e3ec"
+	}
+}
