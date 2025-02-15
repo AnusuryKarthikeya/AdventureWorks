@@ -1,0 +1,19 @@
+{
+	"name": "Git",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "http",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "AdventureWorks_Products",
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "AnusuryKarthikeya/AdventureWorks/refs/heads/main/Data/AdventureWorks_Products.csv"
+			}
+		},
+		"schema": []
+	}
+}
