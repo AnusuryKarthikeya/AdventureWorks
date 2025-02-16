@@ -1,0 +1,19 @@
+{
+	"name": "GitParameters",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "dynamic_adls_link",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "file_parameters.json",
+				"fileSystem": "parameters"
+			}
+		},
+		"schema": {}
+	}
+}
