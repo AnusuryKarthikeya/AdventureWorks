@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 1",
+	"properties": {
+		"content": {
+			"query": "create MASTER KEY ENCRYPTION BY PASSWORD = 'Password@1'\n\nCREATE DATABASE SCOPED CREDENTIAL CRED_KARTHIK\nWITH \n    IDENTITY = 'Managed Identity'\n\ncreate external data SOURCE source_silver \nwith \n(\n    location = 'https://adworksadls.blob.core.windows.net/silver/',\n    CREDENTIAL = CRED_KARTHIK\n)\n\ncreate external data SOURCE source_gold \nwith \n(\n    location = 'https://adworksadls.blob.core.windows.net/gold/',\n    CREDENTIAL = CRED_KARTHIK\n)\n\nCREATE EXTERNAL FILE FORMAT format_parquet\nWITH\n(\n    FORMAT_TYPE = PARQUET,\n    DATA_COMPRESSION = 'org.apache.hadoop.io.compress.SnappyCodec'\n)\n\nCREATE EXTERNAL TABLE GOLD.EXT_CUSTOMERS\nWITH \n(\n    LOCATION = 'EXT_CUSTOMERS',\n    DATA_SOURCE = source_gold,\n    FILE_FORMAT = format_parquet\n)\nAS\nSELECT * FROM GOLD.CUSTOMERS\n\nCREATE EXTERNAL TABLE GOLD.EXT_SALES\nWITH \n(\n    LOCATION = 'EXT_SALES',\n    DATA_SOURCE = source_gold,\n    FILE_FORMAT = format_parquet\n)\nAS\nSELECT * FROM GOLD.SALES\n\nCREATE EXTERNAL TABLE GOLD.EXT_RETURNS\nWITH \n(\n    LOCATION = 'EXT_RETURNS',\n    DATA_SOURCE = source_gold,\n    FILE_FORMAT = format_parquet\n)\nAS\nSELECT * FROM GOLD.RETURNSDA\n\nCREATE EXTERNAL TABLE GOLD.EXT_PRODUCTS\nWITH \n(\n    LOCATION = 'EXT_PRODUCTS',\n    DATA_SOURCE = source_gold,\n    FILE_FORMAT = format_parquet\n)\nAS\nSELECT * FROM GOLD.PRODUCTS\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "azdatabase",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

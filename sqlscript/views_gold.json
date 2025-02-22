@@ -1,0 +1,17 @@
+{
+	"name": "views_gold",
+	"properties": {
+		"content": {
+			"query": "\nCREATE VIEW GOLD.CUSTOMERS AS\nSELECT  \n    *\nFROM \n    OPENROWSET (\n        BULK 'https://adworksadls.blob.core.windows.net/silver/AdventureWorks_Customers/',\n        FORMAT = 'PARQUET'\n    ) AS QUERY1\nGO\n\nCREATE VIEW GOLD.PRODUCTS AS \nSELECT  \n    *\nFROM \n    OPENROWSET (\n        BULK 'https://adworksadls.blob.core.windows.net/silver/AdventureWorks_Products/',\n        FORMAT = 'PARQUET'\n    ) AS QUERY2\nGO\n\nCREATE VIEW GOLD.RETURNSDA AS\nSELECT  \n    *\nFROM \n    OPENROWSET (\n        BULK 'https://adworksadls.blob.core.windows.net/silver/AdventureWorks_Returns/',\n        FORMAT = 'PARQUET'\n    ) AS QUERY3\nGO\n\nCREATE VIEW GOLD.SALES AS\nSELECT  \n    *\nFROM \n    OPENROWSET (\n        BULK 'https://adworksadls.blob.core.windows.net/silver/AdventureWorks_Sales/',\n        FORMAT = 'PARQUET'\n    ) AS QUERY4\n\n\n\n\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "azdatabase",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
